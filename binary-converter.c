@@ -10,15 +10,26 @@ long long p(int x, int y);
 void main(void)
 {
     int i, j=0, a1[8]={0,0,0,0,0,0,0,0}, a2[8]={0,0,0,0,0,0,0,0}, a3[9]={0,0,0,0,0,0,0,0,0}, op, op2;
-    printf("Digite o Numero Binario a ser lido: ");
+    system("cls");
+    printf("-----------------------------------------------------\n");
+    printf("               Binary Operations Program             \n");
+    printf("-----------------------------------------------------\n\n");
+
+    printf(" Write the binary number to be read: ");
     Adjust(a1);
-    printf("Digite o outro Numero Binario a ser lido: ");
+    printf("\n Write the other binary number to be read: ");
     Adjust(a2);
     soma(a1, a2, a3);
+    system("cls");
     inicio:
     do{
+        system("cls");
         if(j>0)printf("Digite um valor entre 1 e 4");
-        printf("\n\nDigite a opcao desejada:\n1 - Soma dos Binarios\n2 - Conversao para decimal\n3 - Releitura dos Binarios\n4 - Sair\n");
+        printf(" -----------------------------------------------------\n");
+        printf("             Binary Operations Program Menu           \n");
+        printf(" -----------------------------------------------------\n\n");
+
+        printf("\n Enter the desired option:\n 1 - Binary Sum\n 2 - Convertion to Decimal\n 3 - Rereading of Binary Numbers\n 4 - Exit\n");
         fflush(stdin);
         scanf("%d", &op);
         j++;
@@ -26,25 +37,44 @@ void main(void)
     switch(op)
     {
         case 1:
-        printf("A soma do Primeiro Numero (");
-        for(i=0;i<8;i++)printf("%d",a1[i]);printf(") com o Segundo Numero(");for(i=0;i<8;i++)printf("%d",a2[i]);
-        printf(") resulta em: ");for(i=0;i<9;i++)printf("%d",a3[i]);
+        system("cls");
+        printf(" >>> Option Choosed: 1 - Binary Sum\n\n\n");
+
+        printf("The sum of first binary number (");
+        for(i=0;i<8;i++)printf("%d",a1[i]);printf(") with the second binary number(");for(i=0;i<8;i++)printf("%d",a2[i]);
+        printf(") results in: ");for(i=0;i<9;i++)printf("%d",a3[i]);
+        printf("\n\n");
+        system("pause");
         goto inicio; break;
+
         case 2:do{
-        if(j>0)printf("Digite um valor entre 1 e 3\n");
-        printf("Digite qual binario converter:\n1 - Primeiro binario escrito\n2 - Segundo binario escrrito\n3 - Soma dos dois binarios\n");
+        system("cls");
+        if(j>0)printf("Write a value between 1 and 3\n");
+        printf(" >>> Option Choosed: 2 - Binary Convertion to Decimal\n\n\n");
+        printf(" Enter what binary number convert:\n 1 - First binary wroted\n 2 - Second binary wroted\n 3 - Sum of two binary numbers wroted\n");
         scanf("%d", &op2);
         j++;}
         while(op2<1||op2>3); j=0;
         switch(op2)
         {
             case 1:
-            printf("\nO valor convertido e: %d", conversor8(a1)); break;
+            system("cls");
+            printf(" >>> Option Choosed: 1 - First Binary Number\n\n\n");
+            printf("\n O valor convertido e: %d", conversor8(a1)); break;
+            printf("\n\n");
             case 2:
-            printf("\nO valor convertido e: %d", conversor8(a2)); break;
+            system("cls");
+            printf(" >>> Option Choosed: 2 - Second Binary Number\n\n\n");
+            printf("\n O valor convertido e: %d", conversor8(a2)); break;
+            printf("\n\n");
             case 3:
-            printf("\nO valor convertido e: %d", conversor9(a3)); break;
+            system("cls");
+            printf(" >>> Option Choosed: 3 - Binary Sum\n\n\n");
+            printf("\n O valor convertido e: %d", conversor9(a3)); break;
+
         }
+        printf("\n\n");
+        system("pause");
         goto inicio; break;
         case 3:
         main(); break;
